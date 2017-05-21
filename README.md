@@ -18,6 +18,24 @@
 git clone git://github.com/altercation/solarized.git
 ```
 
+　　为了使终端的 ls 针对不同类型文件名称着色，我统一用 dircolors-solarized 配色，将 dircolors-solarized 下载到`~/config-for-mac`目录下。本次设置需要用 GNU Coreutils 替换 Mac 的 ls 命令。
+```bash
+# 安装 coreutils
+brew install coreutils
+# 下载 dircolors-solarized
+cd ~/config-for-mac
+git clone https://github.com/seebi/dircolors-solarized.git
+# 配置 .bash_profile
+vim ~/.bash_profile
+##### 添加如下代码 #####
+if brew list | grep coreutils > /dev/null ; then
+  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  alias ls='ls -F --show-control-chars --color=auto'
+  eval `gdircolors -b $HOME/config-for-mac/dircolors-solarized/dircolors.ansi-dark`
+fi
+#####     end    #####
+```
+
 #### dotfile 配置
 
 　　下载到`~/config-for-mac`目录下，执行命令一键配置。
