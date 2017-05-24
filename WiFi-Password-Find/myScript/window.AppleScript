@@ -1,8 +1,8 @@
 tell application "System Events"
 	delay 0.5
-	keystroke "yourLoginUserName”
+	keystroke "LoginUserName"
 	keystroke tab
-	keystroke "yourLoginUserPassword”
+	keystroke "LoginUserPassword"
 	keystroke return
 	delay 1
 end tell
