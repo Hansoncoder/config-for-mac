@@ -13,10 +13,10 @@
 　　我用了这个 `wifi.command` ,感觉挺麻烦的，要输入 WiFi 名称、登录账户密码，搞得太麻烦了。现在开发了一个升级版本的，用的是 Python 脚本和 AppleScript 共同完成，Python 用于选择保存过的 WiFi 名称，AppleScript 用于完成登录框自动填充账户密码，点击确定。升级版本的脚本需要在 `AppleScript脚本` 中配置登录用户名和密码(修改`AppleScript脚本` 时，使用脚本编辑器或在VSCode一类的打开，别用文本编辑器打开，有中文会识别错误)
 
 升级版本脚本使用：
->　　1.修改 `AppleScript脚本` yourLoginUserName 为你电脑登录名
-　　2.修改 `AppleScript脚本` yourLoginUserPassword 为你电脑登录密码
-　　3.双击 `wifi.command` 执行，输入`数字`选择你保存过的 WiFi 名称即可
-　　4.如果只查询一次，用第一个版本也还不错。
+- 修改 `AppleScript脚本` yourLoginUserName 为你电脑登录名
+- 修改 `AppleScript脚本` yourLoginUserPassword 为你电脑登录密码
+- 双击 `wifi.command` 执行，输入`数字`选择你保存过的 WiFi 名称即可
+- 如果只查询一次，用第一个版本也还不错。
 
 #### iTerm2配色方案
 
