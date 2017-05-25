@@ -5,6 +5,29 @@ import ftplib
 import os
 import sys
 
+#---------- 数组中文乱码 -----------#
+
+# 将 "\\U90fd" 转换 "\u90fd" (数组将 "\\U90fd" 字符串输出为中文，必须转为 "\u90fd" 格式)
+def getUnicodeStrFromOther(string):
+    if "\\\\U" in string:
+        return string.replace("\\\\U","\\u")        
+    elif "\\U" in string:
+        return string.replace("\\U","\\u")
+    return string
+
+# 将 "\u90fd\u662f\u7231\u7684" 转换为中文输出
+def getUTF8FromUnicodeStr(unicodeString):
+    return unicodeString.decode('unicode_escape').encode('utf-8')
+
+# 将数组中 item 包含 "\\U90fd" 转换 "\u90fd" 
+def getItemAtArrayItem(item):
+    if "\\U" in item:
+        item = getUnicodeStrFromOther(item)
+        item = getUTF8FromUnicodeStr(item)
+    return item
+#---------- 数组中文乱码 -----------#
+
+
 def getCurrentPath():
     return os.path.dirname(__file__)
 
@@ -38,7 +61,7 @@ def readIndex(SSIDList):
 # 获取 WiFi 名称
 def getWiFiNameList():
     SSIDListStr = execute('defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep SSIDString')
-    temp = SSIDListStr.replace("SSIDString = \"","").replace("\";",",")
+    temp = SSIDListStr.replace("SSIDString = ","").replace(";",",")
     SSIDList = temp.split(",")
     # 处理查询结果
     if len(SSIDList) > 0 :
@@ -55,10 +78,10 @@ def getWiFiPasswd(wifiName) :
     return wifiPasswd
 
 # 输出 WiFi 名称
-def printWiFIName(SSIDList):
+def printWiFIName(List):
     print "----------------------------------"
-    for index,SSIDName in enumerate(SSIDList):
-        print "|  " + str(index+1) + '.WiFi名称：' + SSIDName
+    for index,item in enumerate(List):
+        print "|  " + str(index+1) + '.WiFi名称：' + getItemAtArrayItem(item)
     print "----------------------------------"
 
 # 写入文件
@@ -68,7 +91,7 @@ def writeToFile(file,text):
     file_object.close()
 
 def printfResult(ssid,passwd):
-    text = "WiFi名称：" + wifiName + " 不存在，请选择其他WiFi试试！"
+    text = "您可能存在以下情况：\n 1.WiFi名称：" + getItemAtArrayItem(wifiName) + " 没有密码！\n 2.没有配置window.AppleScript脚本！"
     if len(passwd) != 0:
         text = "WiFi名称：" + ssid + "\nWiFi密码："+ passwd
     filePath = getPardir() + "/wifi.txt"
