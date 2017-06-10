@@ -25,18 +25,19 @@
 　　为了统一管理，将这些系统配置文件一律放到`~/config-for-mac`目录下。将 solarized 下载下来，拷贝到 `~/config-for-mac` 目录下。
 　　打开 iterm　在 Preferences->Profiles->Colors 标签，点击 Load Preset 列表中的 Import 进行导入，然后选择一种即可。
 ```bash
-git clone git://github.com/altercation/solarized.git
+$ git clone git://github.com/altercation/solarized.git
 ```
 
 　　为了使终端的 ls 针对不同类型文件名称着色，我统一用 dircolors-solarized 配色，将 dircolors-solarized 下载到`~/config-for-mac`目录下。本次设置需要用 GNU Coreutils 替换 Mac 的 ls 命令。
 ```bash
 # 安装 coreutils
-brew install coreutils
+$ brew install coreutils
 # 下载 dircolors-solarized
-cd ~/config-for-mac
-git clone https://github.com/seebi/dircolors-solarized.git
+$ cd ~/config-for-mac
+$ git clone https://github.com/seebi/dircolors-solarized.git
 # 配置 .bash_profile
-vim ~/.bash_profile
+$ vim ~/.bash_profile
+
 ##### 添加如下代码 #####
 if brew list | grep coreutils > /dev/null ; then
   PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
@@ -44,24 +45,53 @@ if brew list | grep coreutils > /dev/null ; then
   eval `gdircolors -b $HOME/config-for-mac/dircolors-solarized/dircolors.ansi-dark`
 fi
 #####     end    #####
+
+# 使配置 .bash_profile 重新生效
+$ source ~/.bash_profile
+```
+## Xcode 配置
+
+```bash
+$ cd ~/Desktop
+# 下载Xcode配置文件
+$ git cloen https://github.com/Hansoncoder/Solarized-Dark-for-Xcode.git
+# 拷贝到 ~/Library/Developer/Xcode/UserData/FontAndColorThemes 目录
+$ cd Solarized-Dark-for-Xcode
+$ ./install.sh
+# 偏好设置生效
+打开Xcode -> Command+,(打开偏好设置) -> Fonts&Colors -> Solarized-Dark
 ```
 
 ## dotfile 配置
 
 　　下载到`~/config-for-mac`目录下，执行命令一键配置。
 ```bash
-git clone https://github.com/mathiasbynens/dotfiles.git
+$ cd ~/config-for-mac
+$ git clone https://github.com/mathiasbynens/dotfiles.git
 # 进入子目录执行bootstrap脚本
-cd dotfiles && source bootstrap.sh
+$ cd dotfiles && source bootstrap.sh
 ```
 
 ## Aria2 配置
 
 ```bash
-# chrome网盘助手插件
-https://github.com/acgotaku/BaiduExporter.git
+$ cd ~/config-for-mac
+# chrome网盘助手插件(不会的看文档)
+$ https://github.com/acgotaku/BaiduExporter.git
 # aria2GUI
-https://github.com/yangshun1029/aria2gui/releases
+$ https://github.com/yangshun1029/aria2gui/releases
+```
+
+## Ｌisten　1（关于音乐）
+
+　　由于音乐版权问题，单个音乐播放器都会有一些歌曲无法播放，想听歌下载多个客户端，来回切换应用，真是麻烦的事。这个插件包含了网易云音乐、虾米、ＱＱ音乐的乐库，再也不用下载客户端那么麻烦了。
+
+```bash
+# 习惯将配置文件放这了
+$ cd ~/config-for-mac
+# 下载
+$ git clone https://github.com/listen1/listen1_chrome_extension.git
+打开Chrome -> Command+,(打开偏好设置) -> 扩展程序 -> 加载已解压的扩展程序(需要勾选 开发者模式)-> 选择刚刚下载的文件夹
 ```
 
 ## 参考文献
