@@ -91,11 +91,77 @@ $ https://github.com/yangshun1029/aria2gui/releases
 $ cd ~/config-for-mac
 # 下载
 $ git clone https://github.com/listen1/listen1_chrome_extension.git
-打开Chrome -> Command+,(打开偏好设置) -> 扩展程序 -> 加载已解压的扩展程序(需要勾选 开发者模式)-> 选择刚刚下载的文件夹
+打开Chrome -> Command+,(打开偏好设置) -> 扩展 SwitchySharp程序 -> 加载已解压的扩展程序(需要勾选 开发者模式)-> 选择刚刚下载的文件夹
 ```
+
+## 翻墙 SwitchySharp 自动切换
+
+　　前提条件：已经装好 ShadowSocks 客户端，并且配置好翻墙，这里自己查看网上教程，很多地方都有，我用的是 [搬瓦工][1]，详细教程：[搬瓦工搭建Shadowsocks详细图文教程][2]
+
+- 下载 SwitchySharp (Chrome 插件)
+- 添加插件，打开插件-->选项-->情景模式-->socks代理【配置 本地代理】
+```bash
+情景模式名称：翻墙模式
+socks代理：127.0.0.1  端口：1080
+```
+
+- 自动切换
+　　打开插件-->选项-->切换规则-->新建规则【添加　正则表达式】
+```bash
+(fbcdn|akamaihd|pixnet)\.net|wretch\.cc|t\.co|goo\.gl|(google(usercontent|apis)*|chrome|staticflickr|imdb|ytimg|gstatic|html5rocks|amazonaws|github|tumblr|addthis|wordpress|blogger|(blog|app)spot|friendfeed|twitter|facebook|youtube|dropbox|feedburner|googleapis|android)\.com
+```
+
+- 
+  + URL 模式：复制以上正则表达式放到 
+  + 模式匹配：正则表达式
+  + 情景模式：刚刚添加的【翻墙模式】
+
+- 正则表达式解析如下：
+　　本解析目的是为增加其他匹配做铺垫，如果您需要翻墙浏览的网页没有被以下网址包含，可以自行添加。若不清楚正则表达式，请查看 [正则表达式 - 语法][3]
+```bash
+## ----
+## 上面正则表达式解析如下
+(fbcdn|akamaihd|pixnet)\.net # fbcdn.net
+|wretch\.cc                  # wretch.cc
+|t\.co                       # t.co
+|goo\.gl                     # goo.gl
+|(
+    google(usercontent|apis)*
+    |chrome
+    |staticflickr
+    |imdb
+    |ytimg
+    |gstatic
+    |html5rocks
+    |amazonaws
+    |github              # 以 github.com 结尾
+    |tumblr
+    |addthis
+    |wordpress
+    |blogger
+    |(blog|app)spot
+    |friendfeed
+    |twitter             # 以 twitter.com 结尾
+    |facebook            # 以 facebook.com 结尾
+    |youtube             # 以 youtube.com 结尾
+    |dropbox
+    |feedburner
+    |googleapis
+    |android
+)\.com
+```
+
 
 ## 参考文献
 
 [[译]MAC OS X的命令行技巧](https://crazyof.me/blog/archives/2634.html)
 
 [Awesome OS X Command Line](https://github.com/herrbischoff/awesome-osx-command-line)
+
+[搬瓦工][1]
+[搬瓦工搭建Shadowsocks详细图文教程][2]
+[正则表达式 - 语法][3]
+
+[1]:(https://bandwagonhost.com/aff.php?aff=7549)
+[2]:(https://b.lhuac.com/post/2/)
+[3]:(http://www.runoob.com/regexp/regexp-syntax.html)
