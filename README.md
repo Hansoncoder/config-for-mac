@@ -72,6 +72,36 @@ $ git clone https://github.com/Hansoncoder/dotfiles.git
 $ cd dotfiles && source bootstrap.sh
 ```
 
+## Tree 命令
+
+　　安装 tree
+```bash
+# 安装Homebrew 在终端输入下面指令
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# 安装 tree
+brew install tree
+```
+　　在某个项目下执行tree命令即可
+```bash
+# -L 1 指只显示一级目录
+tree -L 1
+.
+├── Applications
+├── Applications\ (Parallels)
+├── Desktop
+├── Documents
+# 查看帮助文档
+tree --help
+  -a            All files are listed.
+  -d            List directories only.
+  -l            Follow symbolic links like directories.
+  -f            Print the full path prefix for each file.
+  -x            Stay on current filesystem only.
+  -L level      Descend only level directories deep.
+```
+
 ## Aria2 配置
 
 ```bash
