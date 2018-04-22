@@ -67,7 +67,7 @@ $ ./install.sh
 　　下载到`~/config-for-mac`目录下，执行命令一键配置。
 ```bash
 $ cd ~/config-for-mac
-$ git clone https://github.com/mathiasbynens/dotfiles.git
+$ git clone https://github.com/Hansoncoder/dotfiles.git
 # 进入子目录执行bootstrap脚本
 $ cd dotfiles && source bootstrap.sh
 ```
