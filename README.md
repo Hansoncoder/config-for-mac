@@ -102,6 +102,22 @@ tree --help
   -L level      Descend only level directories deep.
 ```
 
+## Karabiner
+
+[Karabiner][4] 是一个键盘修改器，常用让你轻松将键盘改为 Windows 习惯。
+
+```bash
+# 通过 GitHub 下载软件安装.
+# 由于我不想开机启动，所以删除了自启动目录先文件，移动至配置文件地方
+mv /Library/LaunchAgents/org.pqrs.karabiner.karabiner_console_user_server.plist /Users/Hanson/config-for-mac/
+vim karabiner.sh
+# 自己写脚本，想随时启动和关闭
+launchctl load /Users/Hanson/config-for-mac/org.pqrs.karabiner.karabiner_console_user_server.plist
+launchctl unload /Users/Hanson/config-for-mac/org.pqrs.karabiner.karabiner_console_user_server.plist
+# 启动软件
+bash karabiner.sh
+```
+
 ## Aria2 配置
 
 ```bash
@@ -200,3 +216,4 @@ socks代理：127.0.0.1  端口：1080
 [1]:(https://bandwagonhost.com/aff.php?aff=7549)
 [2]:(https://b.lhuac.com/post/2/)
 [3]:(http://www.runoob.com/regexp/regexp-syntax.html)
+[4]:(https://github.com/tekezo/Karabiner)
