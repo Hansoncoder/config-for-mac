@@ -1,3 +1,21 @@
+# This is my config of my Mac
+<!-- TOC -->
+
+- [config-for-mac](#config-for-mac)
+- [ramDisk.sh](#ramdisksh)
+- [wifi.command](#wificommand)
+- [iTerm2配色方案](#iterm2配色方案)
+- [Xcode 配置](#xcode-配置)
+- [dotfile 配置](#dotfile-配置)
+- [Tree 命令](#tree-命令)
+- [Karabiner](#karabiner)
+- [Aria2 配置](#aria2-配置)
+- [Ｌisten　1（关于音乐）](#ｌisten　1关于音乐)
+- [翻墙 SwitchySharp 自动切换](#翻墙-switchysharp-自动切换)
+- [参考文献](#参考文献)
+
+<!-- /TOC -->
+
 ## config-for-mac
 
 　　这是我个人使用电脑的一些配置脚本，个人的偏好设置，部分是高效开发使用，部分是个人喜好使用，在此记录方便以后自己查阅。
@@ -217,3 +235,5 @@ socks代理：127.0.0.1  端口：1080
 [2]:(https://b.lhuac.com/post/2/)
 [3]:(http://www.runoob.com/regexp/regexp-syntax.html)
 [4]:(https://github.com/tekezo/Karabiner)
+
+
