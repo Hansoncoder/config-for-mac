@@ -1,0 +1,1 @@
+launchctl unload /Users/Hanson/config-for-mac/org.pqrs.karabiner.karabiner_console_user_server.plist

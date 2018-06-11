@@ -120,9 +120,11 @@ tree --help
   -L level      Descend only level directories deep.
 ```
 
-## Karabiner
+## 修改键盘三种方法
 
-[Karabiner][4] 是一个键盘修改器，常用让你轻松将键盘改为 Windows 习惯。
+- [Karabiner][4] 是一个键盘修改器，常用让你轻松将键盘改为 Windows 习惯。
+- [ChangeKeyboard] 是一个`Caps lock` 与 `Control`  交换的脚本，重启后会失效。
+- 系统偏好设置->键盘->修饰键，设置完成会长期有效。
 
 ```bash
 # 通过 GitHub 下载软件安装.
