@@ -8,7 +8,7 @@
 - [Xcode 配置](#xcode-配置)
 - [dotfile 配置](#dotfile-配置)
 - [Tree 命令](#tree-命令)
-- [Karabiner](#karabiner)
+- [键盘修改](#修改键盘三种方法)
 - [Aria2 配置](#aria2-配置)
 - [Ｌisten　1（关于音乐）](#ｌisten　1关于音乐)
 - [翻墙 SwitchySharp 自动切换](#翻墙-switchysharp-自动切换)
