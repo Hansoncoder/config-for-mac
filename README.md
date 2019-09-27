@@ -11,7 +11,7 @@
 - [键盘修改](#修改键盘三种方法)
 - [Aria2 配置](#aria2-配置)
 - [Ｌisten　1（关于音乐）](#ｌisten　1关于音乐)
-- [翻墙 SwitchySharp 自动切换](#翻墙-switchysharp-自动切换)
+- [神器-梯子](#神器-梯子)
 - [参考文献](#参考文献)
 
 <!-- /TOC -->
@@ -72,7 +72,7 @@ $ source ~/.bash_profile
 ```bash
 $ cd ~/Desktop
 # 下载Xcode配置文件
-$ git cloen https://github.com/Hansoncoder/Solarized-Dark-for-Xcode.git
+$ git clone https://github.com/Hansoncoder/Solarized-Dark-for-Xcode.git
 # 拷贝到 ~/Library/Developer/Xcode/UserData/FontAndColorThemes 目录
 $ cd Solarized-Dark-for-Xcode
 $ ./install.sh
@@ -162,7 +162,18 @@ $ git clone https://github.com/listen1/listen1_chrome_extension.git
 新版本的Chrome操作如下
 ![chorme](./imgs/chrome_config_extension.png)
 
-## 翻墙 SwitchySharp 自动切换
+## 神器-梯子
+
+##### Chrome插件
+
+`谷歌访问助手:`为chrome扩展用户量身打造。可以解决chrome扩展无法自动更新的问题，同时可以访问谷歌`google搜索`，`gmail邮箱`，`google+`等谷歌服务
+```bash
+cd ~/config-for-mac
+git clone https://github.com/haotian-wang/google-access-helper.git
+打开Chrome -> Command+,(打开偏好设置) -> 扩展程序 -> 加载已解压的扩展程序(需要勾选 开发者模式)-> 选择刚刚下载的文件夹
+```
+
+##### SS(R) + SwitchySharp 自动切换
 
 　　前提条件：已经装好 ShadowSocks 客户端，并且配置好翻墙，这里自己查看网上教程，很多地方都有，我用的是 [搬瓦工][1]，详细教程：[搬瓦工搭建Shadowsocks详细图文教程][2]
 
